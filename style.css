@@ -1,0 +1,20 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-image: url('cliff-background.png'); /* The image used */
+    background-attachment: fixed; /* Fixed background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire viewport */
+}
+
+.content {
+    color: #333;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background for the text */
+    margin: 0 auto; /* Center the content if necessary */
+    max-width: 800px; /* Set a max-width for the content if you wish */
+}
