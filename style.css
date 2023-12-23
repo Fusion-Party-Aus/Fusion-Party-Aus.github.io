@@ -4,17 +4,33 @@ body, html {
     overflow-x: hidden;
     font-family: Arial, sans-serif;
     height: 100%;
-    background-image: url('cliff-background.png'); /* The image used */
-    background-attachment: fixed; /* Fixed background */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Cover the entire viewport */
+    background-image: url('cliff-background.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .content {
-    color: #333;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background for the text */
-    margin: 0 auto; /* Center the content if necessary */
-    max-width: 800px; /* Set a max-width for the content if you wish */
+    margin: 0 auto;
+    max-width: 800px;
+    > div {
+        margin: 20px;
+    }
+}
+
+.glass {
+    background-color: rgba(236,215,208,0.83); /* Light pink with transparency */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    margin-bottom: 20px; /* Add space between the sections */
+    color: #11061b; /* Black text color */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Deeper shadow for 3D effect */
+    border: 1px solid rgba(255,105,180,0.18); /* Light pink border */
+    backdrop-filter: blur(4px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(4px); /* For Safari */
+    border-top: 2px solid rgba(255, 255, 255, 0.5); /* Bright edge on the top */
+    border-left: 2px solid rgba(255, 255, 255, 0.5); /* Bright edge on the left */
+    box-reflect: below 1px linear-gradient(transparent, transparent, #0003); /* Reflective bottom edge for 3D effect */
 }
