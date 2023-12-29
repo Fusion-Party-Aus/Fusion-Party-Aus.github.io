@@ -22,8 +22,10 @@
 
 
 body, html {
-    margin: 0;
+    margin: 0;  // Reset this in case the user's stylesheet wants to interfere
     padding: 0;
+    box-sizing: border-box;
+
     overflow-x: hidden;
     font-family: Arial, sans-serif;
     height: 100%;
@@ -43,15 +45,86 @@ h1, h2, h3, h4, h4, h5, h6 {
     color: var(--magenta);
 }
 
-.content {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 800px;
-    > div {
-        margin: 20px;
+header {
+    text-align: center;
+    padding: 50px;
+
+    h1 {
+        margin-top: 40px;
+        font-size: 2.5em;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 1em;
     }
 }
 
+nav {
+    display: flex;
+    justify-content: space-between; // This will space out the nav-left and nav-right
+    padding-top: 20px;
+
+    ul {
+        list-style: none;
+
+        li {
+            display: inline;
+            margin-right: 20px;
+
+            a {
+                text-decoration: none;
+                color: var(--base01);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.content {
+    padding: 20px;
+
+    .cards-gallery-container {
+        color: var(--base00);
+        text-align: center;
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+
+            .gallery-item {
+                width: 30%;
+
+                img {
+                    max-width: 100%;
+                    border-radius: 15px;
+                }
+
+                p {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .view-all {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: var(--base0);
+            border: 2px solid var(--base02);
+            padding: 10px 20px
+        }
+    }
+}
+
+
+// Unused
 .glass {
     background-color: var(--pastel-pink); // Light pink with transparency
     border-radius: 15px;  // Rounded corners
