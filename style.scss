@@ -103,7 +103,6 @@ nav {
             .gallery-item {
                 width: 30%;  // 30% of the size of the parent container
                 height: 200px;  // Fixed height for each gallery item
-                margin-bottom: 20px;
                 position: relative;  // For potential content overlay
 
                 img {
@@ -112,16 +111,20 @@ nav {
                     object-fit: cover;
                     border-radius: 15px;
                     overflow: hidden;
+                    margin-bottom: 20px;
                 }
 
                 p {
-                    margin-top: 5px;
-                    bottom: 0px;  // Aligned to bottom of image
-                    width: 100%;  // Caption shall span the width of the image
-                    text-align: right;
-                    background: var(--pastel-pink);
-                    padding: 5px 0px;
-                    color: var(--base2);
+                    position: absolute; // Absolute position to overlay on the bottom of the image
+                    bottom: 10px; // Positioning the text a bit above the bottom of the image
+                    right: 10px; // Align the text to the right, with some spacing from the edge
+                    display: inline; // Display as inline to shrink-wrap content
+                    background: var(--pastel-pink); // Pastel pink background with transparency
+                    color: var(--base2); // Text color for readability
+                    padding: 5px 10px; // Padding around the text
+                    border-bottom: 3px solid var(--base3); // Add a solid line above the text for the underline effect
+                    box-sizing: content-box; // Padding and border are added to the width and height of the element
+                    white-space: nowrap; // Prevent the text from wrapping
                 }
             }
         }
