@@ -28,6 +28,7 @@ body, html {
 
     overflow-x: hidden;  // Prevent horizontal scrolling
     font-family: Arial, sans-serif;
+    font-size: 18px;
     height: 100%;
     background-image: url('cliff-background.png');
     background-attachment: fixed;  // Parallax
@@ -97,17 +98,30 @@ nav {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
+            flex-wrap: wrap;
 
             .gallery-item {
                 width: 30%;  // 30% of the size of the parent container
+                height: 200px;  // Fixed height for each gallery item
+                margin-bottom: 20px;
+                position: relative;  // For potential content overlay
 
                 img {
-                    max-width: 100%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                     border-radius: 15px;
+                    overflow: hidden;
                 }
 
                 p {
                     margin-top: 5px;
+                    bottom: 0px;  // Aligned to bottom of image
+                    width: 100%;  // Caption shall span the width of the image
+                    text-align: right;
+                    background: var(--pastel-pink);
+                    padding: 5px 0px;
+                    color: var(--base2);
                 }
             }
         }
