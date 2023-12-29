@@ -21,16 +21,16 @@ body, html {
 }
 
 .glass {
-    background-color: rgba(236,215,208,0.83); /* Light pink with transparency */
-    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(236,215,208,0.83); // Light pink with transparency
+    border-radius: 15px;  // Rounded corners
     padding: 20px;
-    margin-bottom: 20px; /* Add space between the sections */
-    color: #11061b; /* Black text color */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Deeper shadow for 3D effect */
-    border: 1px solid rgba(255,105,180,0.18); /* Light pink border */
-    backdrop-filter: blur(4px); /* Frosted glass effect */
-    -webkit-backdrop-filter: blur(4px); /* For Safari */
-    border-top: 2px solid rgba(255, 255, 255, 0.5); /* Bright edge on the top */
-    border-left: 2px solid rgba(255, 255, 255, 0.5); /* Bright edge on the left */
-    box-reflect: below 1px linear-gradient(transparent, transparent, #0003); /* Reflective bottom edge for 3D effect */
+    margin-bottom: 20px;  // Add space between the sections
+    color: #11061b;  // Black text color
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  // Deeper shadow for 3D effect
+    border: 1px solid rgba(255,105,180,0.18);  // Light pink border
+    backdrop-filter: blur(4px);  // Frosted glass effect
+    -webkit-backdrop-filter: blur(4px);  // For Safari
+    border-top: 2px solid rgba(255, 255, 255, 0.5);  // Bright edge on the top
+    border-left: 2px solid rgba(255, 255, 255, 0.5);  // Bright edge on the left
+    box-reflect: below 1px linear-gradient(transparent, transparent, #0003);  // Reflective bottom edge for 3D effect
 }
