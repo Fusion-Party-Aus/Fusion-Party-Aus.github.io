@@ -30,11 +30,7 @@ body, html {
     font-family: Arial, sans-serif;
     font-size: 18px;
     height: 100%;
-    background-image: url('cliff-background.png');
-    background-attachment: fixed;  // Parallax
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;  // Cover the viewport
+    background-color: var(--pastel-pink);
     color: var(--base00);
 }
 
@@ -47,8 +43,33 @@ h1, h2, h3, h4, h4, h5, h6 {
 }
 
 header {
+    position: relative;
     text-align: left;
     padding: 50px;
+    background-image: url('cliff-background.png');
+    background-attachment: fixed;  // Parallax
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  // Cover the viewport
+    border-radius: 15px;  // Round the corners of the header
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: radial-gradient(circle, transparent, var(--pastel-pink) 70%); // Replace $solid-color with your color
+        pointer-events: none; // Ensure the overlay doesn't interfere with clicking/header content
+        z-index: 1;  // Keep a low z-index so the content ends up above this.
+    }
+
+    * {
+        position: relative;
+        z-index: 2;  // Above the after-glow.
+    }
 
     h1 {
         margin-top: 40px;
