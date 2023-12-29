@@ -26,14 +26,14 @@ body, html {
     padding: 0;
     box-sizing: border-box;
 
-    overflow-x: hidden;
+    overflow-x: hidden;  // Prevent horizontal scrolling
     font-family: Arial, sans-serif;
     height: 100%;
     background-image: url('cliff-background.png');
-    background-attachment: fixed;
+    background-attachment: fixed;  // Parallax
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  // Cover the viewport
     color: var(--base00);
 }
 
@@ -66,16 +66,16 @@ nav {
     padding-top: 20px;
 
     ul {
-        list-style: none;
+        list-style: none;  // Remove default list styling
 
         li {
-            display: inline;
+            display: inline;  // Horizontal list
             margin-right: 20px;
 
             a {
-                text-decoration: none;
+                text-decoration: none;  // Remove underline from links
                 color: var(--base01);
-                font-weight: bold;
+                font-weight: bold;  // Add emphasis
             }
         }
     }
@@ -99,7 +99,7 @@ nav {
             margin-top: 20px;
 
             .gallery-item {
-                width: 30%;
+                width: 30%;  // 30% of the size of the parent container
 
                 img {
                     max-width: 100%;
