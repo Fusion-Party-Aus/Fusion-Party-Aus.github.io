@@ -3,7 +3,7 @@
 Running the demo:
 * In one window, listen to sass changes, for compiling to CSS:
   ```shell
-  sass --watch style.scss: style.css
+  sass --watch style.scss:style.css
   ```
 * In another window, serve the web application:
   ```shell
