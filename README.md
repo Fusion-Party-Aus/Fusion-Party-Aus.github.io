@@ -7,6 +7,7 @@ Underground CRM, using a more templated approach to allow easier editing, plus t
 organisations.
 
 If you'd like to see what the website currently looks like (if you were to run the site), it is similar to this:
+
 > ![A screenshot of the website](./docs/Capture d’écran de 2023-12-31 00-07-32.png)
 > There should ideally be screenshots accompanying [each substantial commit](./commits/master).
 
