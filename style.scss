@@ -181,6 +181,7 @@ section {
     width: 55%;
 
     iframe {
+        // iframe gets replaced, so it can't have :before/:after elements or anything above it.
         // The aspect ratio is taken from the width and height suggested when copying the embedding HTML from
         // YouTube. Either the height or ratio must be set explicitly, as the iframe has no inherent, native height.
         width: 100%;
