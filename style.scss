@@ -41,6 +41,10 @@ b {
 
 h1, h2, h3, h4, h4, h5, h6 {
     color: var(--magenta);
+    a {
+        color: inherit;
+        text-decoration: none;  // Remove underline from links
+    }
 }
 
 .hero-background {
@@ -160,6 +164,7 @@ nav {
         color: var(--base00);
         background-color: var(--pastel-pink-transparent);
         padding-top: 5px;
+        margin: 20px 0;
         text-align: center;
 
         h2 {
@@ -190,6 +195,7 @@ nav {
                     position: absolute; // Absolute position to overlay on the bottom of the image
                     bottom: 10px; // Positioning the text a bit above the bottom of the image
                     right: 10px; // Align the text to the right, with some spacing from the edge
+                    text-align: right;
                     display: inline; // Display as inline to shrink-wrap content
                     transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
                     //transform: translateX(100%); // Start with the paragraph off the right edge
@@ -198,7 +204,14 @@ nav {
                     padding: 5px 10px; // Padding around the text
                     border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
                     box-sizing: content-box; // Padding and border are added to the width and height of the element
-                    white-space: nowrap; // Prevent the text from wrapping
+                    max-width: 70%;
+                    //white-space: nowrap; // Prevent the text from wrapping
+                }
+
+                h1,h2,h3,h4,h5,h6,time {
+                    //position: absolute;
+                    display: block;  // Take up the whole line
+                    margin: 0;
                 }
 
                 // Styles when hovering over the .gallery-item
