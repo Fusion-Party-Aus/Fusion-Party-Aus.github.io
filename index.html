@@ -5,9 +5,9 @@
     <title>Fusion Party</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <div class="hero-background">
-        <header>
+<body class="back-pane">
+    <div><!-- This could serve as the hero background, depending on the size -->
+        <header class="hero-background">
             <nav>
                 <ul class="nav-left">
                     <li><a href="#">Policy</a></li>
@@ -27,9 +27,18 @@
                 with meaningful work to meet the critical social and ecological challenges of our times.
                 Fusion's approach is to empower communities and foster deliberative democracy across our society.
             </p>
+            <section class="rounded video">
+                <!-- todo: is this in the best spot? -->
+                <iframe class="rounded"
+                        src="https://www.youtube.com/embed/KEgtPhTOAzE?si=Qp0de8BTTdjWaiYW"
+                        title="Introducing Fusion"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
+            </section>
         </header>
         <main class="content">
-            <!-- todo: embed a YouTube video here -->
             <section class="cards-gallery-container rounded">
                 <h2>Fusion Values</h2>
                 <p>When we think up new ideas, we make sure they're vaguely related to these concepts:</p>
@@ -92,7 +101,7 @@
             </section>
         </main>
     </div>
-    <footer>
+    <footer class="content">
         <p>© Fusion Party</p>
         <nav>
             <ul>

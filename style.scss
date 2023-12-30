@@ -17,8 +17,11 @@
     --cyan: #2aa198;
     --green: #859900;
     // Pastel themes
+    --pastel-dark-pink-solid: rgb(236, 201, 252);
     --pastel-pink-solid: rgba(246, 226, 249, 1);
     --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
+    // z layers
+    --z-text: 4;  // Above the hero-background
 }
 
 
@@ -31,8 +34,14 @@ body, html {
     font-family: Arial, sans-serif;
     font-size: 18px;
     height: 100%;
-    background-color: var(--pastel-pink-solid);
     color: var(--base00);
+}
+
+
+.back-pane {
+    position: relative;
+    background-color: var(--pastel-dark-pink-solid);
+    z-index: 0;  // By definition, this should be behind everything else.
 }
 
 b {
@@ -51,17 +60,17 @@ h1, h2, h3, h4, h4, h5, h6 {
     position: relative;
     background-image:
         // top and bottom: start violet at 0, then transparent at 20%.
-        linear-gradient(to bottom, var(--violet) -5%, transparent 20%,
-                        transparent 80%, var(--violet) 105%),
-        linear-gradient(to right, var(--violet) -5%, transparent 3%,
-                        transparent 97%, var(--violet) 105%),  // left and right*/
+        linear-gradient(to bottom, var(--base03) -5%, transparent 20%,
+                        transparent 80%, var(--pastel-pink-solid) 105%),
+        linear-gradient(to right, var(--pastel-pink-solid) -5%, transparent 3%,
+                        transparent 97%, var(--pastel-pink-solid) 105%),  // left and right
         url('images/owenfm_Australian_valley_scene_oblique_silhouettes_of_kangaroos_7cac8875-7fdb-44cd-be1a-12a15be2b219.png');
     // If we wanted a parallax look, we'd say background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;  // Cover the viewport
     //padding-bottom: 200px;  // Based on the chosen as the background image
-    z-index: 1;  // Keep a low z-index so the content ends up above this.
+    z-index: 2;  // Keep a low z-index so the glow and content ends up above this.
 
     &:before {
         content: '';
@@ -71,7 +80,7 @@ h1, h2, h3, h4, h4, h5, h6 {
         bottom: 0;
         left: 0;
         background: inherit;  // Inherit the background from the parent
-        z-index: 2;  // Sit on top of the hero image, but below the content
+        z-index: 3;  // Sit on top of the hero image, but below the content
         border-radius: 15px;  // Rounded corners for the mask
         background-clip: padding-box;  // Prevent background from bleeding into the border
     }
@@ -90,7 +99,7 @@ header {
     text-align: left;
     padding: 50px;
     overflow: hidden;
-    z-index: 3;  // Above the hero-background
+    z-index: var(--z-text);
 
     &:after {
         content: '';
@@ -99,14 +108,13 @@ header {
         right: 0;
         bottom: 0;
         left: 0;
-        //background: radial-gradient(circle, transparent, var(--pastel-pink-transparent) 70%);
         pointer-events: none; // Ensure the overlay doesn't interfere with clicking/header content
-        z-index: 2;  // After-glow
+        z-index: 3;  // After-glow
     }
 
     * {
         position: relative;
-        z-index: 3;  // Above the after-glow.
+        z-index: var(--z-text);  // Above the after-glow.
     }
 
     h1 {
@@ -156,16 +164,38 @@ nav {
 }
 
 section {
+    z-index: var(--z-text);  // Above
     color: var(--base00);
     background-color: var(--pastel-pink-transparent);
     padding-top: 5px;
+    // // Notice that this can overlap on the edges, so the browser window doesn't have a smooth vertical line of fading
     margin: 20px 0;
     text-align: center;
 }
 
+.video {
+    display: grid;
+    place-items: center;
+    padding: 15px;  // Same width all around the image, for a nice frame.
+    margin: 20px;
+    width: 55%;
+
+    iframe {
+        // The aspect ratio is taken from the width and height suggested when copying the embedding HTML from
+        // YouTube. Either the height or ratio must be set explicitly, as the iframe has no inherent, native height.
+        width: 100%;
+        aspect-ratio: 560/315;
+        height: auto;
+    }
+}
+
 .content {
     position: relative;
-    z-index: 3;
+    z-index: 1;  // Now we can have a fade over the top of the background color.
+    background-image:
+        // By having dark edges, notice that it looks like a curved screen.
+        linear-gradient(to right, var(--violet) -5%, transparent 3%,
+                        transparent 97%, var(--violet) 105%);  // left and right
     padding: 20px;
 }
 
