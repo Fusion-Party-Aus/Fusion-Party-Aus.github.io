@@ -8,8 +8,9 @@ organisations.
 
 If you'd like to see what the website currently looks like (if you were to run the site), it is similar to this:
 
-> ![A screenshot of the website](./docs/Capture d’écran de 2023-12-31 00-07-32.png)
-> There should ideally be screenshots accompanying [each substantial commit](./commits/master).
+> ![A screenshot of the website](docs/Capture d’écran de 2023-12-31 00-07-32.png)
+> There should ideally be screenshots accompanying 
+> [each substantial commit](https://github.com/owen9825/fusion_demo/commits/master/).
 
 ## Installation
 * Install [Python](https://www.python.org/)
