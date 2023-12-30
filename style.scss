@@ -46,7 +46,7 @@ header {
     position: relative;
     text-align: left;
     padding: 50px;
-    background-image: url('cliff-background.png');
+    background-image: url('images/owenfm_Australian_valley_scene_oblique_silhouettes_of_kangaroos_7cac8875-7fdb-44cd-be1a-12a15be2b219.png');
     background-attachment: fixed;  // Parallax
     background-position: center;
     background-repeat: no-repeat;
@@ -85,6 +85,7 @@ header {
     p {
         margin-top: 20px;
         font-size: 1em;
+        max-width: 40%;  // 40% of its parent container
     }
 }
 
