@@ -39,6 +39,7 @@ body, html {
 
 
 .back-pane {
+    // todo: calm gradient animations? https://codepen.io/TWilson/pen/jOdWqbZ
     position: relative;
     background-color: var(--pastel-dark-pink-solid);
     z-index: 0;  // By definition, this should be behind everything else.
