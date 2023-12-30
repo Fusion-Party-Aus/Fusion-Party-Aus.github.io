@@ -12,6 +12,9 @@ If you'd like to see what the website currently looks like (if you were to run t
 > There should ideally be screenshots accompanying 
 > [each substantial commit](https://github.com/owen9825/fusion_demo/commits/master/).
 
+The homepage design was inspired by [this design](https://www.pinterest.com.au/pin/745345807080680754/) and 
+[this Pinterest board 📌](https://www.pinterest.com.au/owen9825/web-design/).
+
 ## Installation
 * Install [Python](https://www.python.org/)
 * Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
