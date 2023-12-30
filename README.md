@@ -35,6 +35,10 @@ Running the demo:
 ## Contributing
 Please fork the project and issue a PR to merge it back into master here.
 
+### Resources
+* [Fusion brand assets & style guide](https://www.fusionparty.org.au/brand_assets)
+* [Fusion imagery](https://drive.google.com/drive/u/3/folders/12abdh2isrXyCulVq7slxsOTYf6zF8HYh)
+
 ## Future work:
 * Policy page
 * An article page
