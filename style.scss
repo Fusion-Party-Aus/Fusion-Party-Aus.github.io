@@ -155,101 +155,87 @@ nav {
     }
 }
 
+section {
+    color: var(--base00);
+    background-color: var(--pastel-pink-transparent);
+    padding-top: 5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
 .content {
     position: relative;
     z-index: 3;
     padding: 20px;
+}
 
-    .cards-gallery-container {
-        color: var(--base00);
-        background-color: var(--pastel-pink-transparent);
-        padding-top: 5px;
-        margin: 20px 0;
-        text-align: center;
+.cards-gallery-container {
+    h2 {
+        font-size: 2em;
+        margin: 5px 0;
+    }
 
-        h2 {
-            font-size: 2em;
-            margin: 5px 0;
-        }
+    .gallery {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        flex-wrap: wrap;
 
-        .gallery {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            flex-wrap: wrap;
+        .gallery-item {
+            width: 30%;  // 30% of the size of the parent container
+            height: 200px;  // Fixed height for each gallery item
+            position: relative;  // For potential content overlay
+            margin: 18px 0;
 
-            .gallery-item {
-                width: 30%;  // 30% of the size of the parent container
-                height: 200px;  // Fixed height for each gallery item
-                position: relative;  // For potential content overlay
-                margin: 18px 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                overflow: hidden;
+                margin-bottom: 20px;
+            }
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    overflow: hidden;
-                    margin-bottom: 20px;
-                }
+            p {
+                position: absolute; // Absolute position to overlay on the bottom of the image
+                bottom: 10px; // Positioning the text a bit above the bottom of the image
+                right: 10px; // Align the text to the right, with some spacing from the edge
+                text-align: right;
+                display: inline; // Display as inline to shrink-wrap content
+                transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
+                //transform: translateX(100%); // Start with the paragraph off the right edge
+                background-color: var(--pastel-pink-transparent); // Pastel pink background with transparency
+                color: var(--base2); // Text color for readability
+                padding: 5px 10px; // Padding around the text
+                border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
+                box-sizing: content-box; // Padding and border are added to the width and height of the element
+                max-width: 70%;
+                //white-space: nowrap; // Prevent the text from wrapping
+            }
 
+            h1,h2,h3,h4,h5,h6,time {
+                //position: absolute;
+                display: block;  // Take up the whole line
+                margin: 0;
+            }
+
+            // Styles when hovering over the .gallery-item
+            &:hover {
+                cursor: pointer;
                 p {
-                    position: absolute; // Absolute position to overlay on the bottom of the image
-                    bottom: 10px; // Positioning the text a bit above the bottom of the image
-                    right: 10px; // Align the text to the right, with some spacing from the edge
-                    text-align: right;
-                    display: inline; // Display as inline to shrink-wrap content
-                    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
-                    //transform: translateX(100%); // Start with the paragraph off the right edge
-                    background-color: var(--pastel-pink-transparent); // Pastel pink background with transparency
-                    color: var(--base2); // Text color for readability
-                    padding: 5px 10px; // Padding around the text
-                    border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
-                    box-sizing: content-box; // Padding and border are added to the width and height of the element
-                    max-width: 70%;
-                    //white-space: nowrap; // Prevent the text from wrapping
-                }
-
-                h1,h2,h3,h4,h5,h6,time {
-                    //position: absolute;
-                    display: block;  // Take up the whole line
-                    margin: 0;
-                }
-
-                // Styles when hovering over the .gallery-item
-                &:hover {
-                    cursor: pointer;
-                    p {
-                        background-color: var(--base2);
-                        color: var(--magenta);
-                        transform: translateX(-5%); // Reset translation to show the paragraph
-                    }
+                    background-color: var(--base2);
+                    color: var(--magenta);
+                    transform: translateX(-5%); // Reset translation to show the paragraph
                 }
             }
         }
-
-        .view-all {
-            display: block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: var(--base0);
-            border: 2px solid var(--base02);
-            padding: 10px 20px
-        }
     }
-}
 
-
-// Unused
-.glass {
-    background-color: var(--pastel-pink); // Light pink with transparency
-    border-radius: 15px;  // Rounded corners
-    padding: 20px;
-    margin-bottom: 20px;  // Add space between the sections
-    color: var(--base02);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  // Deeper shadow for 3D effect
-    border: 1px solid rgba(255,105,180,0.18);  // Light pink border
-    backdrop-filter: blur(4px);  // Frosted glass effect
-    -webkit-backdrop-filter: blur(4px);  // For Safari
-    border-top: 2px solid rgba(255, 255, 255, 0.5);  // Bright edge on the top
-    border-left: 2px solid rgba(255, 255, 255, 0.5);  // Bright edge on the left
+    .view-all {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: var(--base0);
+        border: 2px solid var(--base02);
+        padding: 10px 20px
+    }
 }
