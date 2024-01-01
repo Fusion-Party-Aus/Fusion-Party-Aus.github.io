@@ -184,6 +184,12 @@ section {
     text-align: center;
 }
 
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .video {
     display: grid;
     place-items: center;
@@ -304,7 +310,101 @@ section {
     &:hover {
       background-position: right center;
     }
-
+    cursor: pointer;
+    border-width: 0;
     max-width: 50%;
 }
 
+.ring {
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ring i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+.ring div {
+    position: absolute;  // Without this, the items inside the rings will not be selectable
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 40px;
+}
+.ring .inputBx {
+    position: relative;
+    width: 100%;
+}
+.ring i:nth-child(1) {
+    transform: translateX(70%);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate1 21s linear infinite;
+}
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 17s linear infinite;
+}
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate3 20s linear infinite;
+}
+.ring i:nth-child(4) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate4 24s linear infinite;
+}
+.ring i:nth-child(5) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate5 15s linear infinite;
+}
+.ring:hover i {
+  border: 6px solid var(--ring-color);
+  filter: drop-shadow(0 0 20px var(--ring-color));
+}
+@keyframes animate1 {
+  0% {
+    // These offsets were measured by Owen
+    transform: translateX(-26.4px) translateY(-22px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-26.4px) translateY(-22px) rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(-13.2px) translateY(4.5px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(-13.2px) translateY(4.5px) rotate(0deg);
+  }
+}
+@keyframes animate3 {
+  0% {
+    transform: translateX(-45.2px) translateY(4.6px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-45.2px) translateY(4.6px) rotate(360deg);
+  }
+}
+@keyframes animate4 {
+  0% {
+    transform: translateX(-38.2px) translateY(-15.7px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(-38.2px) translateY(-15.7px) rotate(0deg);
+  }
+}
+@keyframes animate5 {
+  0% {
+    transform: translateX(-17.6px) translateY(-15.3px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-17.6px) translateY(-15.3px) rotate(360deg);
+  }
+}
