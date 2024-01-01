@@ -20,6 +20,15 @@
     --pastel-dark-pink-solid: rgb(236, 201, 252);
     --pastel-pink-solid: rgba(246, 226, 249, 1);
     --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
+    // Previous Fusion colours
+    --fusion-aqua: #5effd8;
+    --fusion-green: #008c65;  // This complements aqua
+    --fusion-blue: #5facff;
+    --fusion-dark-blue: #3d4dcb;  // This complements blue
+    --fusion-eggplant: #9954bb;
+    --fusion-darker-eggplant: #8542a7;  // This complements eggplant
+    --fusion-hot-pink: #ff7fff;
+    --fusion-purple: #8a16a7;  // This complements hot pink
     // z layers
     --z-text: 4;  // Above the hero-background
 }
@@ -88,6 +97,7 @@ h1, h2, h3, h4, h4, h5, h6 {
 }
 
 .rounded {
+    // The old Fusion site had a border-radius of 30px, for a pill shape.
     border-radius: 15px;
 
     img {
@@ -271,3 +281,30 @@ section {
         padding: 10px 20px
     }
 }
+
+.hover-button {
+    // https://codepen.io/Katiae/pen/eWjJaY
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    //font-weight: 800;
+    //font-size: 1em;
+    //text-transform: uppercase;
+    color: var(--base3);
+
+    // Button shape & animation
+    border-radius: 6px;
+    margin: 10px;
+    padding: 1em 3em;
+    background-size: 200% auto;
+    color: var(--base3);
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
+    transition: 0.5s;
+    &:hover {
+      background-position: right center;
+    }
+
+    max-width: 50%;
+}
+
