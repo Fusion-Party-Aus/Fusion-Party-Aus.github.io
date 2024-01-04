@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Fusion Party</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sparkles.css">
 </head>
 <body class="back-pane">
     <div><!-- This could serve as the hero background, depending on the size -->
@@ -12,7 +13,6 @@
                 <ul class="nav-left">
                     <!--
                         todo: add more sparkle on hover?
-                        * https://codepen.io/Katiae/pen/eWjJaY
                         * https://codepen.io/simeydotme/pen/gOqNxRa
                         * https://codepen.io/Gogh/pen/GRPoqQW
                     -->
@@ -131,7 +131,12 @@
                     <input type="email" placeholder="john@example.com">
                 </div>
                 <div class="inputBx">
-                    <input class="hover-button" type="submit" value="Submit">
+                    <div class="shimmery">
+                    <button type="submit">
+                        <span class="text">Click me</span>
+                        <span class="shimmer"></span>
+                    </button>
+                    </div>
                 </div>
                 </div>
                 </div>
