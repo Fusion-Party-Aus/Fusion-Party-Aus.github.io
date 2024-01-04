@@ -1,374 +1,388 @@
 :root {
-    // Solarized colors, designed for beautiful reading: https://ethanschoonover.com/solarized/
-    --base03: #002b36;
-    --base02: #073642;
-    --base01: #586e75;
-    --base00: #657b83;
-    --base0: #839496;
-    --base1: #93a1a1;
-    --base2: #eee8d5;
-    --base3: #fdf6e3;
-    --yellow: #b58900;
-    --orange: #cb4b16;
-    --red: #dc322f;
-    --magenta: #d33682;
-    --violet: #6c71c4;
-    --blue: #268bd2;
-    --cyan: #2aa198;
-    --green: #859900;
-    // Pastel themes
-    --pastel-dark-pink-solid: rgb(236, 201, 252);
-    --pastel-pink-solid: rgba(246, 226, 249, 1);
-    --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
-    // Previous Fusion colours
-    --fusion-aqua: #5effd8;
-    --fusion-green: #008c65;  // This complements aqua
-    --fusion-blue: #5facff;
-    --fusion-dark-blue: #3d4dcb;  // This complements blue
-    --fusion-eggplant: #9954bb;
-    --fusion-darker-eggplant: #8542a7;  // This complements eggplant
-    --fusion-hot-pink: #ff7fff;
-    --fusion-purple: #8a16a7;  // This complements hot pink
-    // z layers
-    --z-text: 4;  // Above the hero-background
+  // Solarized colors, designed for beautiful reading: https://ethanschoonover.com/solarized/
+  --base03: #002b36;
+  --base02: #073642;
+  --base01: #586e75;
+  --base00: #657b83;
+  --base0: #839496;
+  --base1: #93a1a1;
+  --base2: #eee8d5;
+  --base3: #fdf6e3;
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red: #dc322f;
+  --magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+  // Pastel themes
+  --pastel-dark-pink-solid: rgb(236, 201, 252);
+  --pastel-pink-solid: rgba(246, 226, 249, 1);
+  --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
+  // Previous Fusion colours
+  --fusion-aqua: #5effd8;
+  --fusion-green: #008c65; // This complements aqua
+  --fusion-blue: #5facff;
+  --fusion-dark-blue: #3d4dcb; // This complements blue
+  --fusion-eggplant: #9954bb;
+  --fusion-darker-eggplant: #8542a7; // This complements eggplant
+  --fusion-hot-pink: #ff7fff;
+  --fusion-purple: #8a16a7; // This complements hot pink
+  // z layers
+  --z-text: 4; // Above the hero-background
 }
 
 
 body, html {
-    margin: 0;  // Reset this in case the user's stylesheet wants to interfere
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0; // Reset this in case the user's stylesheet wants to interfere
+  padding: 0;
+  box-sizing: border-box;
 
-    overflow-x: hidden;  // Prevent horizontal scrolling
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    height: 100%;
-    color: var(--base00);
+  overflow-x: hidden; // Prevent horizontal scrolling
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  height: 100%;
+  color: var(--base00);
 }
 
 
 .back-pane {
-    // todo: calm gradient animations? https://codepen.io/TWilson/pen/jOdWqbZ
-    position: relative;
-    background-color: var(--pastel-dark-pink-solid);
-    z-index: 0;  // By definition, this should be behind everything else.
+  // todo: calm gradient animations? https://codepen.io/TWilson/pen/jOdWqbZ
+  position: relative;
+  background-color: var(--pastel-dark-pink-solid);
+  z-index: 0; // By definition, this should be behind everything else.
 }
 
 b {
-    color: var(--base01);
+  color: var(--base01);
 }
 
 h1, h2, h3, h4, h4, h5, h6 {
-    color: var(--magenta);
-    a {
-        color: inherit;
-        text-decoration: none;  // Remove underline from links
-    }
+  color: var(--magenta);
+
+  a {
+    color: inherit;
+    text-decoration: none; // Remove underline from links
+  }
 }
 
 .hero-background {
-    position: relative;
-    background-image:
-        // top and bottom: start violet at 0, then transparent at 20%.
-        linear-gradient(to bottom, rgba(236,201,252,0.7) -5%, transparent 20%,
-                        transparent 80%, rgba(9, 93, 64, 0.38) 105%),
-        linear-gradient(to right, var(--pastel-pink-solid) -5%, transparent 3%,
-                        transparent 97%, var(--pastel-pink-solid) 105%),  // left and right
-        url('images/forest portal.png');
-    // If we wanted a parallax look, we'd say background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;  // Cover the viewport
-    //padding-bottom: 200px;  // Based on the chosen as the background image
-    z-index: 2;  // Keep a low z-index so the glow and content ends up above this.
+  position: relative;
+  background-image: // top and bottom: start violet at 0, then transparent at 20%.
+          linear-gradient(to bottom, rgba(236,201,252,0.7) -5%, transparent 20%,
+                  transparent 80%, rgba(9, 93, 64, 0.38) 105%),
+          linear-gradient(to right, var(--pastel-pink-solid) -5%, transparent 3%,
+                  transparent 97%, var(--pastel-pink-solid) 105%), // left and right
+          url('images/forest portal.png');
+  // If we wanted a parallax look, we'd say background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; // Cover the viewport
+  //padding-bottom: 200px;  // Based on the chosen as the background image
+  z-index: 2; // Keep a low z-index so the glow and content ends up above this.
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: inherit;  // Inherit the background from the parent
-        z-index: 3;  // Sit on top of the hero image, but below the content
-        border-radius: 15px;  // Rounded corners for the mask
-        background-clip: padding-box;  // Prevent background from bleeding into the border
-    }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit; // Inherit the background from the parent
+    z-index: 3; // Sit on top of the hero image, but below the content
+    border-radius: 15px; // Rounded corners for the mask
+    background-clip: padding-box; // Prevent background from bleeding into the border
+  }
 }
 
 .rounded {
-    // The old Fusion site had a border-radius of 30px, for a pill shape.
-    border-radius: 15px;
+  // The old Fusion site had a border-radius of 30px, for a pill shape.
+  border-radius: 15px;
 
-    img {
-        border-radius: 15px;
-    }
+  img {
+    border-radius: 15px;
+  }
 }
 
 header {
+  position: relative;
+  text-align: left;
+  padding: 50px;
+  overflow: hidden;
+  z-index: var(--z-text);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none; // Ensure the overlay doesn't interfere with clicking/header content
+    z-index: 3; // After-glow
+  }
+
+  * {
     position: relative;
-    text-align: left;
-    padding: 50px;
-    overflow: hidden;
-    z-index: var(--z-text);
+    z-index: var(--z-text); // Above the after-glow.
+  }
 
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        pointer-events: none; // Ensure the overlay doesn't interfere with clicking/header content
-        z-index: 3;  // After-glow
-    }
+  h1 {
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 2.5em;
+  }
 
-    * {
-        position: relative;
-        z-index: var(--z-text);  // Above the after-glow.
-    }
+  h2 {
+    margin-left: 20px;
+    border-bottom: 3px solid var(--base3); // Add a solid line under the text for the underline effect
+    box-sizing: content-box; // Padding and border are added to the width and height of the element
+    display: inline; // Shrink-wrap
+  }
 
-    h1 {
-        margin-top: 40px;
-        margin-left: 40px;
-        font-size: 2.5em;
-    }
-    h2 {
-        margin-left: 20px;
-        border-bottom: 3px solid var(--base3); // Add a solid line under the text for the underline effect
-        box-sizing: content-box; // Padding and border are added to the width and height of the element
-        display: inline; // Shrink-wrap
-    }
-    p {
-        margin-top: 20px;
-        font-size: 1em;
-        max-width: 40%;  // 40% of its parent container
-    }
+  p {
+    margin-top: 20px;
+    font-size: 1em;
+    max-width: 40%; // 40% of its parent container
+  }
 }
 
 nav {
-    display: flex;
-    justify-content: space-between; // This will space out the nav-left and nav-right
-    padding-top: 20px;
+  display: flex;
+  justify-content: space-between; // This will space out the nav-left and nav-right
+  padding-top: 20px;
 
-    ul {
-        list-style: none;  // Remove default list styling
+  ul {
+    list-style: none; // Remove default list styling
 
-        li {
-            display: inline;  // Horizontal list
-            margin-right: 20px;
-            transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
+    li {
+      display: inline; // Horizontal list
+      margin-right: 20px;
+      transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
 
-            &:hover {
-                cursor: pointer;
-                background-color: var(--base2);
-                color: var(--pastel-pink-transparent);
-            }
+      &:hover {
+        cursor: pointer;
+        background-color: var(--base2);
+        color: var(--pastel-pink-transparent);
+      }
 
-            a {
-                text-decoration: none;  // Remove underline from links
-                color: var(--magenta);
-                font-weight: bold;  // Add emphasis
-            }
-        }
+      a {
+        text-decoration: none; // Remove underline from links
+        color: var(--magenta);
+        font-weight: bold; // Add emphasis
+      }
     }
+  }
 }
 
 section {
-    z-index: var(--z-text);  // Above
-    color: var(--base00);
-    background-color: var(--pastel-pink-transparent);
-    padding-top: 5px;
-    // // Notice that this can overlap on the edges, so the browser window doesn't have a smooth vertical line of fading
-    margin: 20px 0;
-    text-align: center;
+  z-index: var(--z-text); // Above
+  color: var(--base00);
+  background-color: var(--pastel-pink-transparent);
+  padding-top: 5px;
+  // // Notice that this can overlap on the edges, so the browser window doesn't have a smooth vertical line of fading
+  margin: 20px 0;
+  text-align: center;
 }
 
 .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .video {
-    display: grid;
-    place-items: center;
-    padding: 15px;  // Same width all around the image, for a nice frame.
-    margin: 20px;
-    width: 55%;
+  display: grid;
+  place-items: center;
+  padding: 15px; // Same width all around the image, for a nice frame.
+  margin: 20px;
+  width: 55%;
 
-    iframe {
-        // iframe gets replaced, so it can't have :before/:after elements or anything above it.
-        // The aspect ratio is taken from the width and height suggested when copying the embedding HTML from
-        // YouTube. Either the height or ratio must be set explicitly, as the iframe has no inherent, native height.
-        width: 100%;
-        aspect-ratio: 560/315;
-        height: auto;
-    }
+  iframe {
+    // iframe gets replaced, so it can't have :before/:after elements or anything above it.
+    // The aspect ratio is taken from the width and height suggested when copying the embedding HTML from
+    // YouTube. Either the height or ratio must be set explicitly, as the iframe has no inherent, native height.
+    width: 100%;
+    aspect-ratio: 560/315;
+    height: auto;
+  }
 }
 
 .content {
-    position: relative;
-    z-index: 1;  // Now we can have a fade over the top of the background color.
-    background-image:
-        linear-gradient(to bottom, #e6d2ff -5%, transparent 20%,
-                        transparent 80%, #e6d2ff 105%),
-        // By having dark edges, notice that it looks like a curved screen.
-        linear-gradient(to right, var(--violet) -5%, transparent 3%,
-                        transparent 97%, var(--violet) 105%);  // left and right
-    padding: 20px;
+  position: relative;
+  z-index: 1; // Now we can have a fade over the top of the background color.
+  background-image: linear-gradient(to bottom, #e6d2ff -5%, transparent 20%,
+          transparent 80%, #e6d2ff 105%),
+    // By having dark edges, notice that it looks like a curved screen.
+  linear-gradient(to right, var(--violet) -5%, transparent 3%,
+                  transparent 97%, var(--violet) 105%); // left and right
+  padding: 20px;
 }
 
 .cards-gallery-container {
-    h2 {
-        font-size: 2em;
-        margin: 5px 0;
-    }
+  h2 {
+    font-size: 2em;
+    margin: 5px 0;
+  }
 
-    .gallery {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-        flex-wrap: wrap;
+  .gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
 
-        .gallery-item {
-            width: 30%;  // 30% of the size of the parent container
-            height: 200px;  // Fixed height for each gallery item
-            position: relative;  // For potential content overlay
-            margin: 18px 0;
+    .gallery-item {
+      width: 30%; // 30% of the size of the parent container
+      height: 200px; // Fixed height for each gallery item
+      position: relative; // For potential content overlay
+      margin: 18px 0;
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                overflow: hidden;
-                margin-bottom: 20px;
-            }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
 
-            p {
-                position: absolute; // Absolute position to overlay on the bottom of the image
-                bottom: 10px; // Positioning the text a bit above the bottom of the image
-                right: 10px; // Align the text to the right, with some spacing from the edge
-                text-align: right;
-                display: inline; // Display as inline to shrink-wrap content
-                transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
-                //transform: translateX(100%); // Start with the paragraph off the right edge
-                background-color: var(--pastel-pink-transparent); // Pastel pink background with transparency
-                color: var(--base2); // Text color for readability
-                padding: 5px 10px; // Padding around the text
-                border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
-                box-sizing: content-box; // Padding and border are added to the width and height of the element
-                max-width: 70%;
-                //white-space: nowrap; // Prevent the text from wrapping
-            }
+      p {
+        position: absolute; // Absolute position to overlay on the bottom of the image
+        bottom: 10px; // Positioning the text a bit above the bottom of the image
+        right: 10px; // Align the text to the right, with some spacing from the edge
+        text-align: right;
+        display: inline; // Display as inline to shrink-wrap content
+        transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
+        //transform: translateX(100%); // Start with the paragraph off the right edge
+        background-color: var(--pastel-pink-transparent); // Pastel pink background with transparency
+        color: var(--base2); // Text color for readability
+        padding: 5px 10px; // Padding around the text
+        border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
+        box-sizing: content-box; // Padding and border are added to the width and height of the element
+        max-width: 70%;
+        //white-space: nowrap; // Prevent the text from wrapping
+      }
 
-            h1,h2,h3,h4,h5,h6,time {
-                //position: absolute;
-                display: block;  // Take up the whole line
-                margin: 0;
-            }
+      h1, h2, h3, h4, h5, h6, time {
+        //position: absolute;
+        display: block; // Take up the whole line
+        margin: 0;
+      }
 
-            // Styles when hovering over the .gallery-item
-            &:hover {
-                cursor: pointer;
-                p {
-                    background-color: var(--base2);
-                    color: var(--magenta);
-                    transform: translateX(-5%); // Reset translation to show the paragraph
-                }
-            }
+      // Styles when hovering over the .gallery-item
+      &:hover {
+        cursor: pointer;
+
+        p {
+          background-color: var(--base2);
+          color: var(--magenta);
+          transform: translateX(-5%); // Reset translation to show the paragraph
         }
+      }
     }
+  }
 
-    .view-all {
-        display: block;
-        margin-top: 20px;
-        text-decoration: none;
-        color: var(--base0);
-        border: 2px solid var(--base02);
-        padding: 10px 20px
-    }
+  .view-all {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--base0);
+    border: 2px solid var(--base02);
+    padding: 10px 20px
+  }
 }
 
 .hover-button {
-    // https://codepen.io/Katiae/pen/eWjJaY
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    //font-weight: 800;
-    //font-size: 1em;
-    //text-transform: uppercase;
-    color: var(--base3);
+  // https://codepen.io/Katiae/pen/eWjJaY
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  //font-weight: 800;
+  //font-size: 1em;
+  //text-transform: uppercase;
+  color: var(--base3);
 
-    // Button shape & animation
-    border-radius: 6px;
-    margin: 10px;
-    padding: 1em 3em;
-    background-size: 200% auto;
-    color: var(--base3);
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
-    transition: 0.5s;
-    &:hover {
-      background-position: right center;
-    }
-    cursor: pointer;
-    border-width: 0;
-    max-width: 50%;
+  // Button shape & animation
+  border-radius: 6px;
+  margin: 10px;
+  padding: 1em 3em;
+  background-size: 200% auto;
+  color: var(--base3);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
+  transition: 0.5s;
+
+  &:hover {
+    background-position: right center;
+  }
+
+  cursor: pointer;
+  border-width: 0;
+  max-width: 50%;
 }
 
 .ring {
-    position: relative;
-    width: 50%;
-    aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .ring i {
-    position: absolute;
-    inset: 0;
-    border: 2px solid white;
-    transition: 0.5s;
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  transition: 0.5s;
 }
+
 .ring div {
-    position: absolute;  // Without this, the items inside the rings will not be selectable
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    min-height: 40px;
+  position: absolute; // Without this, the items inside the rings will not be selectable
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 40px;
 }
+
 .ring .inputBx {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
+
 .ring i:nth-child(1) {
-    transform: translateX(70%);
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    animation: animate1 21s linear infinite;
+  transform: translateX(70%);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate1 21s linear infinite;
 }
+
 .ring i:nth-child(2) {
   border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
   animation: animate2 17s linear infinite;
 }
+
 .ring i:nth-child(3) {
   border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
   animation: animate3 20s linear infinite;
 }
+
 .ring i:nth-child(4) {
   border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
   animation: animate4 24s linear infinite;
 }
+
 .ring i:nth-child(5) {
   border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
   animation: animate5 15s linear infinite;
 }
+
 .ring:hover i {
   border: 6px solid var(--ring-color);
   filter: drop-shadow(0 0 20px var(--ring-color));
 }
+
 @keyframes animate1 {
   0% {
     // These offsets were measured by Owen
@@ -378,6 +392,7 @@ section {
     transform: translateY(-26.4px) translateY(-22px) rotate(360deg);
   }
 }
+
 @keyframes animate2 {
   0% {
     transform: translateX(-13.2px) translateY(4.5px) rotate(360deg);
@@ -386,6 +401,7 @@ section {
     transform: translateX(-13.2px) translateY(4.5px) rotate(0deg);
   }
 }
+
 @keyframes animate3 {
   0% {
     transform: translateX(-45.2px) translateY(4.6px) rotate(0deg);
@@ -394,6 +410,7 @@ section {
     transform: translateX(-45.2px) translateY(4.6px) rotate(360deg);
   }
 }
+
 @keyframes animate4 {
   0% {
     transform: translateX(-38.2px) translateY(-15.7px) rotate(360deg);
@@ -402,6 +419,7 @@ section {
     transform: translateX(-38.2px) translateY(-15.7px) rotate(0deg);
   }
 }
+
 @keyframes animate5 {
   0% {
     transform: translateX(-17.6px) translateY(-15.3px) rotate(0deg);
