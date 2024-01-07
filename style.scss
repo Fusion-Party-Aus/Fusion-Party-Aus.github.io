@@ -156,15 +156,39 @@ header {
 
   h2 {
     margin-left: 20px;
-    border-bottom: 3px solid var(--neon-pink); // Add a solid line under the text for the underline effect
-    box-sizing: content-box; // Padding and border are added to the width and height of the element
-    display: inline; // Shrink-wrap
   }
 
   p {
     margin-top: #{min(1.5vw, 15px)};
     font-size: 1em;
     //max-width: 40%; // 40% of its parent container
+  }
+}
+
+.neon-pink {
+  box-sizing: content-box;   // Padding and border are added to the width and height of the element
+  display: inline;  // Shrink-wrap
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%; /* Full width of the parent */
+    height: 3px; /* Same height as your border */
+    border-radius: 15px;
+    background-color: var(--neon-pink); /* The color of your 'neon' glow */
+    box-shadow:
+            // x, y, blur-radius, color
+            0 0 5px var(--neon-pink);
+            /*0 3px 10px var(--neon-pink),
+            0 6px 15px var(--neon-pink),
+            0 9px 20px var(--neon-pink),
+            0 12px 35px var(--neon-pink),
+            0 15px 40px var(--neon-pink),
+            0 18px 50px var(--neon-pink),
+            0 21px 75px var(--neon-pink);*/
+    animation: neon-pink-glow 5s ease-in-out infinite alternate;
   }
 }
 
@@ -211,7 +235,7 @@ header {
   }
   ul.inline-list {
     // Notice that this is the same as h2
-    border-bottom: 3px solid var(--neon-pink); // Add a solid line under the text for the underline effect
+    //border-bottom: 3px solid var(--neon-pink); // Add a solid line under the text for the underline effect
     box-sizing: content-box;  /* Padding and border are added to the width and height of the element */
     display: inline; // Shrink-wrap
     list-style-type: none;  /* Removes default bullets */
@@ -229,10 +253,6 @@ header {
     display: inline-block;  /* Displays list items inline */
     margin-right: 0;  /* Adjusts space between items */
   }
-
-  /*ul.inline-list li::after {
-      content: " · ";  // Adds a dot after each list item
-  }*/
 
   ul.inline-list li:last-child::after {
       content: ""; /* Removes dot after the last item */
@@ -531,5 +551,31 @@ section {
   }
   100% {
     transform: translateX(-17.6px) translateY(-15.3px) rotate(360deg);
+  }
+}
+
+
+@keyframes neon-pink-glow {
+  from {
+    box-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff,
+            0 0 40px #F897E9EA,
+            0 0 70px #F897E9EA,
+            0 0 80px #F897E9EA,
+            0 0 100px #F897E9EA,
+            0 0 150px #F897E9EA;
+  }
+  to {
+    box-shadow:
+            0 0 5px #F897E9EA,
+            0 0 10px #F897E9EA,
+            0 0 15px #fff,
+            0 0 20px #F897E9EA,
+            0 0 35px #F897E9EA,
+            0 0 40px #F897E9EA,
+            0 0 50px #F897E9EA,
+            0 0 75px #F897E9EA;
   }
 }
