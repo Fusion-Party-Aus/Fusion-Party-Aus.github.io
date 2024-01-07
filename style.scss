@@ -311,6 +311,16 @@ section {
   text-align: center;
 }
 
+.content {
+  .colored-backing {
+    box-shadow:
+            // x, y, blur-radius, color
+            0 0 40px rgba(158, 243, 220, 0.2),
+            0 0 50px rgba(158, 243, 220, 0.2),
+            0 0 75px rgba(158, 243, 220, 0.2);
+  }
+}
+
 .video {
   display: grid;
   place-items: center;
