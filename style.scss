@@ -121,7 +121,7 @@ h1, h2, h3, h4, h4, h5, h6 {
 header {
   position: relative;
   text-align: left;
-  padding: 50px;
+  padding: 4vw;
   overflow: hidden;
   z-index: var(--z-text);
 
@@ -151,7 +151,9 @@ header {
   img.h1 {
     margin-left: 0;
     margin-bottom: 1vh;
-    max-width: 50%;
+    min-width: 300px;
+    width: 50%;
+    max-width: 700px;
   }
 
   h2 {
@@ -248,6 +250,8 @@ header {
   ul.inline-list li {
     display: inline-block;  /* Displays list items inline */
     margin-right: 0;  /* Adjusts space between items */
+    margin-top: 1vh;
+    margin-bottom: 1vh;
   }
 
   ul.inline-list li:last-child::after {
@@ -274,6 +278,10 @@ header {
     }
 }
 
+header .d-flex {
+  margin-top: 1.5vh;
+}
+
 .flex-row {
     flex-direction: row; /* This will arrange flex items in a row */
 }
@@ -290,7 +298,7 @@ header {
   // With a wide row, we ensure it appears a bit below the first item. With a narrow row that wraps below,
   // it results in a large gap below the above item. Either way, we ensure a large part of the background image
   // remains visible, even if the screen shrinks.
-  margin-top: 120px;
+  margin-top: 6vh;
 }
 
 section {
