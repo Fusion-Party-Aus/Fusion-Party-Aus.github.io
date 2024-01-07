@@ -20,6 +20,20 @@
   --pastel-dark-pink-solid: rgb(236, 201, 252);
   --pastel-pink-solid: rgba(246, 226, 249, 1);
   --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
+  --coral-solid: rgba(233,190,204,1);
+  --coral-transparent: rgba(233,190,204,0.6);
+  --neon-pink: rgba(248, 151, 233, 0.82);
+  --underground-primary: #B62CABFF;
+  //--underground-primary: #8E2F65;  // For headings
+  --underground-secondary: #411640;  // Sub-headings
+  --underground-link: #264E73;
+  --underground-tertiary-solid: #ABB2E3;
+  --underground-tertiary-transparent: rgba(171,178,227,0.7);
+  --underground-text: #080305;
+  --underground-text-backing: rgba(230, 202, 243, 0.6);
+  //--underground-text-backing: #e1d1e599;
+  --underground-background: #F2E3FFFF;
+  --underground-white: #fcf8ff;
   // Previous Fusion colours
   --fusion-aqua: #5effd8;
   --fusion-green: #008c65; // This complements aqua
@@ -29,6 +43,7 @@
   --fusion-darker-eggplant: #8542a7; // This complements eggplant
   --fusion-hot-pink: #ff7fff;
   --fusion-purple: #8a16a7; // This complements hot pink
+  --fusion-logo-purple: #C926F2;
   // z layers
   --z-text: 4; // Above the hero-background
 }
@@ -43,14 +58,19 @@ body, html {
   font-family: Arial, sans-serif;
   font-size: 18px;
   height: 100%;
-  color: var(--base00);
+  color: var(--underground-text);
 }
 
 
 .back-pane {
   // todo: calm gradient animations? https://codepen.io/TWilson/pen/jOdWqbZ
   position: relative;
-  background-color: var(--pastel-dark-pink-solid);
+  /*background-image:
+          linear-gradient(to bottom, #ecdbff -5%, transparent 20%, transparent 80%, #ffd5c3 105%),
+            // By having dark edges, notice that it looks like a curved screen.
+          linear-gradient(to right, var(--violet) -5%, transparent 3%,
+                  transparent 97%, var(--violet) 105%); // left and right*/
+  background-color: var(--underground-background);
   z-index: 0; // By definition, this should be behind everything else.
 }
 
@@ -59,7 +79,7 @@ b {
 }
 
 h1, h2, h3, h4, h4, h5, h6 {
-  color: var(--magenta);
+  color: var(--underground-primary);
 
   a {
     color: inherit;
@@ -136,15 +156,15 @@ header {
 
   h2 {
     margin-left: 20px;
-    border-bottom: 3px solid var(--base3); // Add a solid line under the text for the underline effect
+    border-bottom: 3px solid var(--neon-pink); // Add a solid line under the text for the underline effect
     box-sizing: content-box; // Padding and border are added to the width and height of the element
     display: inline; // Shrink-wrap
   }
 
   p {
-    margin-top: 20px;
+    margin-top: #{min(1.5vw, 15px)};
     font-size: 1em;
-    max-width: 40%; // 40% of its parent container
+    //max-width: 40%; // 40% of its parent container
   }
 }
 
@@ -154,22 +174,31 @@ nav {
   padding-top: 20px;
 
   ul {
-    list-style: none; // Remove default list styling
+    list-style: none; // Remove bullets
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(230, 202, 243, 0.4);
 
     li {
       display: inline; // Horizontal list
       margin-right: 20px;
-      transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
+      padding: 7px;
+      //background-color: rgba(230, 202, 243, 0.1);
+      border-radius: 15px;
+      transition: background-color 0.00s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
 
       &:hover {
         cursor: pointer;
-        background-color: var(--base2);
-        color: var(--pastel-pink-transparent);
+        background-color: var(--underground-text-backing);
+        a {
+          color: var(--underground-primary);
+        }
       }
 
       a {
         text-decoration: none; // Remove underline from links
-        color: var(--magenta);
+        //color: var(--underground-tertiary-solid);
+        color: var(--underground-white);
         font-weight: bold; // Add emphasis
       }
     }
@@ -177,27 +206,44 @@ nav {
 }
 
 header {
+  h1 {
+    color: var(--underground-white);
+  }
   ul.inline-list {
     // Notice that this is the same as h2
-    border-bottom: 3px solid var(--base3); // Add a solid line under the text for the underline effect
+    border-bottom: 3px solid var(--neon-pink); // Add a solid line under the text for the underline effect
     box-sizing: content-box;  /* Padding and border are added to the width and height of the element */
     display: inline; // Shrink-wrap
     list-style-type: none;  /* Removes default bullets */
     padding: 0;  /* Removes default padding */
-    //white-space: nowrap;  /* Keeps the list in one line as much as possible */
+    color: var(--underground-white);
+  }
+
+  .text {
+    padding: 5px;
+    border-radius: 15px;
+    font-weight: bold; // Add emphasis
   }
 
   ul.inline-list li {
     display: inline-block;  /* Displays list items inline */
-    margin-right: 10px;  /* Adjusts space between items */
+    margin-right: 0;  /* Adjusts space between items */
   }
 
-  ul.inline-list li::after {
-      content: " · ";  /* Adds a dot after each list item */
-  }
+  /*ul.inline-list li::after {
+      content: " · ";  // Adds a dot after each list item
+  }*/
 
   ul.inline-list li:last-child::after {
       content: ""; /* Removes dot after the last item */
+  }
+
+  li {
+    &:hover {
+      cursor: pointer;
+      background-color: var(--underground-text-backing);
+      color: var(--underground-primary);
+    }
   }
 }
 
@@ -224,6 +270,9 @@ header {
 }
 
 .sunk {
+  // With a wide row, we ensure it appears a bit below the first item. With a narrow row that wraps below,
+  // it results in a large gap below the above item. Either way, we ensure a large part of the background image
+  // remains visible, even if the screen shrinks.
   margin-top: 120px;
 }
 
@@ -242,8 +291,8 @@ section {
 
 .colored-backing {
   z-index: var(--z-text); // Above
-  color: var(--base00);
-  background-color: var(--pastel-pink-transparent);
+  color: var(--underground-secondary);
+  background-color: var(--underground-text-backing);
   text-align: center;
 }
 
@@ -314,8 +363,8 @@ section {
         display: inline; // Display as inline to shrink-wrap content
         transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
         //transform: translateX(100%); // Start with the paragraph off the right edge
-        background-color: var(--pastel-pink-transparent); // Pastel pink background with transparency
-        color: var(--base2); // Text color for readability
+        background-color: var(--coral-transparent); // Pastel pink background with transparency
+        color: var(--underground-primary); // Text color for readability
         padding: 5px 10px; // Padding around the text
         border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
         box-sizing: content-box; // Padding and border are added to the width and height of the element
@@ -334,8 +383,8 @@ section {
         cursor: pointer;
 
         p {
-          background-color: var(--base2);
-          color: var(--magenta);
+          //background-color: var(--underground-tertiary-transparent);
+          color: var(--underground-secondary);
           transform: translateX(-5%); // Reset translation to show the paragraph
         }
       }
@@ -357,14 +406,10 @@ section {
   display: block;
   text-align: center;
   text-decoration: none;
-  //font-weight: 800;
-  //font-size: 1em;
-  //text-transform: uppercase;
-  color: var(--base3);
 
   // Button shape & animation
   border-radius: 6px;
-  margin: 10px;
+  margin: 10px 0;
   padding: 1em 3em;
   background-size: 200% auto;
   color: var(--base3);
