@@ -265,9 +265,11 @@ header {
 .d-flex {
     display: flex; /* This will enable flexbox for the container */
     flex-wrap: wrap; /* This allows items to wrap onto the next line if there's not enough space */
+    justify-content: space-between;
 
     div {
       min-width: 300px;
+      max-width: 700px;
       flex: 1;
     }
 }
@@ -327,7 +329,7 @@ section {
   padding: #{min(2vw, 15px)}; // Same width all around the image, for a nice frame. Tighter as the screen shrinks
   margin: #{min(2.5vw, 15px)};
   width: 80%;  // Try to make the video large, but if the screen is already large, limit it to 560px
-  max-width: 560px;
+  max-width: #{max(70vw, 560px)};
 
   iframe {
     // iframe gets replaced, so it can't have :before/:after elements or anything above it.
