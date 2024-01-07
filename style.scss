@@ -197,7 +197,8 @@ section {
   place-items: center;
   padding: 15px; // Same width all around the image, for a nice frame.
   margin: 20px;
-  width: 55%;
+  width: 80%;  // Try to make the video large, but if the screen is already large, limit it to 560px
+  max-width: 560px;
 
   iframe {
     // iframe gets replaced, so it can't have :before/:after elements or anything above it.
