@@ -201,10 +201,33 @@ header {
   }
 }
 
+.d-flex {
+    display: flex; /* This will enable flexbox for the container */
+    flex-wrap: wrap; /* This allows items to wrap onto the next line if there's not enough space */
+
+    div {
+      min-width: 300px;
+      flex: 1;
+    }
+}
+
+.flex-row {
+    flex-direction: row; /* This will arrange flex items in a row */
+}
+
+.align-self-start {
+    align-self: flex-start; /* Aligns the item to the start of the flex container */
+}
+
+.align-self-end {
+    align-self: flex-end; /* Aligns the item to the end of the flex container */
+}
+
+.sunk {
+  margin-top: 120px;
+}
+
 section {
-  z-index: var(--z-text); // Above
-  color: var(--base00);
-  background-color: var(--pastel-pink-transparent);
   padding-top: 5px;
   // // Notice that this can overlap on the edges, so the browser window doesn't have a smooth vertical line of fading
   margin: 20px 0;
@@ -217,11 +240,18 @@ section {
   align-items: center;
 }
 
+.colored-backing {
+  z-index: var(--z-text); // Above
+  color: var(--base00);
+  background-color: var(--pastel-pink-transparent);
+  text-align: center;
+}
+
 .video {
   display: grid;
   place-items: center;
-  padding: 15px; // Same width all around the image, for a nice frame.
-  margin: 20px;
+  padding: #{min(2vw, 15px)}; // Same width all around the image, for a nice frame. Tighter as the screen shrinks
+  margin: #{min(2.5vw, 15px)};
   width: 80%;  // Try to make the video large, but if the screen is already large, limit it to 560px
   max-width: 560px;
 
@@ -235,15 +265,19 @@ section {
   }
 }
 
-.content {
-  position: relative;
-  z-index: 1; // Now we can have a fade over the top of the background color.
+.bg-gradient {
   background-image: linear-gradient(to bottom, #e6d2ff -5%, transparent 20%,
           transparent 80%, #e6d2ff 105%),
     // By having dark edges, notice that it looks like a curved screen.
   linear-gradient(to right, var(--violet) -5%, transparent 3%,
                   transparent 97%, var(--violet) 105%); // left and right
-  padding: 20px;
+}
+
+.content {
+  position: relative;
+  z-index: 1; // Now we can have a fade over the top of the background color.
+  padding: #{min(2vw, 15px)};
+  text-align: left;
 }
 
 .cards-gallery-container {
@@ -314,7 +348,7 @@ section {
     text-decoration: none;
     color: var(--base0);
     border: 2px solid var(--base02);
-    padding: 10px 20px
+    padding: #{min(1.5vw, 10px)}, #{min(2.5vw, 20px)};
   }
 }
 
