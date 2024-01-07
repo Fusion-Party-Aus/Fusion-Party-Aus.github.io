@@ -176,6 +176,31 @@ nav {
   }
 }
 
+header {
+  ul.inline-list {
+    // Notice that this is the same as h2
+    border-bottom: 3px solid var(--base3); // Add a solid line under the text for the underline effect
+    box-sizing: content-box;  /* Padding and border are added to the width and height of the element */
+    display: inline; // Shrink-wrap
+    list-style-type: none;  /* Removes default bullets */
+    padding: 0;  /* Removes default padding */
+    //white-space: nowrap;  /* Keeps the list in one line as much as possible */
+  }
+
+  ul.inline-list li {
+    display: inline-block;  /* Displays list items inline */
+    margin-right: 10px;  /* Adjusts space between items */
+  }
+
+  ul.inline-list li::after {
+      content: " · ";  /* Adds a dot after each list item */
+  }
+
+  ul.inline-list li:last-child::after {
+      content: ""; /* Removes dot after the last item */
+  }
+}
+
 section {
   z-index: var(--z-text); // Above
   color: var(--base00);
