@@ -112,6 +112,10 @@ h1, h2, h3, h4, h4, h5, h6 {
   }
 }
 
+.v-rounded {
+  border-radius: 0.75em;
+}
+
 header {
   position: relative;
   text-align: left;
@@ -291,6 +295,15 @@ section {
   // // Notice that this can overlap on the edges, so the browser window doesn't have a smooth vertical line of fading
   margin: 20px 0;
   text-align: center;
+}
+
+.form {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.inputBx {
+  padding: 0.2vh 1vw;
 }
 
 .centered {
