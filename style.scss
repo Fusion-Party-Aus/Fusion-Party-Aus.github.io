@@ -29,8 +29,8 @@
   --underground-tertiary-solid: #ABB2E3;
   --underground-tertiary-transparent: rgba(171,178,227,0.7);
   --underground-text: #080305;
-  --underground-text-backing: rgba(230, 202, 243, 0.6);
-  --underground-background: #F2E3FFFF;
+  --underground-text-backing: rgba(217, 208, 248, 0.6);
+  --underground-background: #f2e3ff;
   --underground-white: #fcf8ff;
   // Previous Fusion colours
   --fusion-aqua: #5effd8;
@@ -182,13 +182,6 @@ header {
     box-shadow:
             // x, y, blur-radius, color
             0 0 5px var(--neon-pink);
-            /*0 3px 10px var(--neon-pink),
-            0 6px 15px var(--neon-pink),
-            0 9px 20px var(--neon-pink),
-            0 12px 35px var(--neon-pink),
-            0 15px 40px var(--neon-pink),
-            0 18px 50px var(--neon-pink),
-            0 21px 75px var(--neon-pink);*/
     animation: neon-pink-glow 5s ease-in-out infinite alternate;
   }
 }
@@ -317,6 +310,8 @@ section {
 .colored-backing {
   z-index: var(--z-text); // Above
   color: var(--underground-secondary);
+  // Notice that the background color has transparency, so for colored-backing outside the header, you might prefer to
+  // adjust the underground-background-color, which will be shining through.
   background-color: var(--underground-text-backing);
   text-align: center;
 }
