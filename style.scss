@@ -373,9 +373,10 @@ section {
 
     .gallery-item {
       width: 30%; // 30% of the size of the parent container
+      max-width: 45%;
       height: 200px; // Fixed height for each gallery item
       position: relative; // For potential content overlay
-      margin: 18px 0;
+      margin: 18px 1%;
 
       img {
         width: 100%;
