@@ -8,16 +8,11 @@
   --base1: #93a1a1;
   --base2: #eee8d5;
   --base3: #fdf6e3;
-  --yellow: #b58900;
-  --orange: #cb4b16;
-  --red: #dc322f;
-  --magenta: #d33682;
   --violet: #6c71c4;
   --blue: #268bd2;
   --cyan: #2aa198;
   --green: #859900;
   // Pastel themes
-  --pastel-dark-pink-solid: rgb(236, 201, 252);
   --pastel-pink-solid: rgba(246, 226, 249, 1);
   --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
   --coral-solid: rgba(233,190,204,1);
@@ -92,7 +87,6 @@ h1, h2, h3, h4, h4, h5, h6 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; // Cover the viewport
-  //padding-bottom: 200px;  // Based on the chosen as the background image
   z-index: 2; // Keep a low z-index so the glow and content ends up above this.
 
   &:before {
@@ -207,13 +201,11 @@ nav {
       display: inline; // Horizontal list
       margin-right: 20px;
       padding: 7px;
-      //background-color: rgba(230, 202, 243, 0.1);
       border-radius: 15px;
       transition: background-color 0.00s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
 
       a {
         text-decoration: none; // Remove underline from links
-        //color: var(--underground-tertiary-solid);
         color: var(--underground-white);
         font-weight: bold; // Add emphasis
       }
@@ -393,7 +385,7 @@ section {
         text-align: right;
         display: inline; // Display as inline to shrink-wrap content
         transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; // Animate the background color and transform properties
-        background-color: var(--coral-transparent); // Pastel pink background with transparency
+        background-color: var(--coral-transparent);
         color: var(--underground-primary); // Text color for readability
         padding: 5px 10px; // Padding around the text
         border-bottom: 3px solid var(--base3); // Add a solid line below the text for the underline effect
@@ -412,7 +404,6 @@ section {
         cursor: pointer;
 
         p {
-          //background-color: var(--underground-tertiary-transparent);
           color: var(--underground-secondary);
           transform: translateX(-5%); // Reset translation to show the paragraph
         }
