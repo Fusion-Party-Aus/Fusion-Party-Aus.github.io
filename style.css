@@ -1,0 +1,422 @@
+:root {
+  --base03: #002b36;
+  --base02: #073642;
+  --base01: #586e75;
+  --base00: #657b83;
+  --base0: #839496;
+  --base1: #93a1a1;
+  --base2: #eee8d5;
+  --base3: #fdf6e3;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+  --pastel-pink-solid: rgba(246, 226, 249, 1);
+  --pastel-pink-transparent: rgba(246, 226, 249, 0.7);
+  --coral-solid: rgba(233,190,204,1);
+  --coral-transparent: rgba(233,190,204,0.6);
+  --neon-pink: rgba(248, 151, 233, 0.82);
+  --underground-primary: #B62CABFF;
+  --underground-secondary: #411640;
+  --underground-link: #264E73;
+  --underground-tertiary-solid: #ABB2E3;
+  --underground-tertiary-transparent: rgba(171,178,227,0.7);
+  --underground-text: #080305;
+  --underground-text-backing: rgba(217, 208, 248, 0.6);
+  --underground-background: #f2e3ff;
+  --underground-white: #fcf8ff;
+  --fusion-aqua: #5effd8;
+  --fusion-green: #008c65;
+  --fusion-blue: #5facff;
+  --fusion-dark-blue: #3d4dcb;
+  --fusion-eggplant: #9954bb;
+  --fusion-darker-eggplant: #8542a7;
+  --fusion-hot-pink: #ff7fff;
+  --fusion-purple: #8a16a7;
+  --fusion-logo-purple: #C926F2;
+  --z-text: 4; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  height: 100%;
+  color: var(--underground-text); }
+
+.back-pane {
+  position: relative;
+  background-color: var(--underground-background);
+  z-index: 0; }
+
+b {
+  color: var(--base01); }
+
+h1, h2, h3, h4, h4, h5, h6 {
+  color: var(--underground-primary); }
+  h1 a, h2 a, h3 a, h4 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    text-decoration: none; }
+
+.hero-background {
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(236, 201, 252, 0.7) -5%, transparent 20%, transparent 80%, rgba(9, 93, 64, 0.38) 105%), linear-gradient(to right, var(--pastel-pink-solid) -5%, transparent 3%, transparent 97%, var(--pastel-pink-solid) 105%), url("images/forest portal.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2; }
+  .hero-background:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    z-index: 3;
+    border-radius: 15px;
+    background-clip: padding-box; }
+
+.rounded {
+  border-radius: 15px; }
+  .rounded img {
+    border-radius: 15px; }
+
+.v-rounded {
+  border-radius: 0.75em; }
+
+header {
+  position: relative;
+  text-align: left;
+  padding: 4vw;
+  overflow: hidden;
+  z-index: var(--z-text); }
+  header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 3; }
+  header * {
+    position: relative;
+    z-index: var(--z-text); }
+  header h1, header .h1 {
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 2.5em;
+    display: block; }
+  header img.h1 {
+    margin-left: 0;
+    margin-bottom: 1vh;
+    min-width: 300px;
+    width: 50%;
+    max-width: 700px; }
+  header h2 {
+    margin-left: 20px; }
+  header p {
+    margin-top: min(1.5vw, 15px);
+    font-size: 1em; }
+
+.neon-pink-border {
+  box-sizing: content-box;
+  display: inline; }
+  .neon-pink-border:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    /* Full width of the parent */
+    height: 3px;
+    /* Same height as your border */
+    border-radius: 15px;
+    background-color: var(--neon-pink);
+    /* The color of your 'neon' glow */
+    box-shadow: 0 0 5px var(--neon-pink);
+    animation: neon-pink-glow 5s ease-in-out infinite alternate; }
+
+.neon-pink-glow:hover {
+  animation: neon-pink-glow 5s ease-in-out infinite alternate; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px; }
+  nav ul {
+    list-style: none;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(230, 202, 243, 0.4); }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+      padding: 7px;
+      border-radius: 15px;
+      transition: background-color 0.00s ease-in-out, transform 0.4s ease-in-out; }
+      nav ul li a {
+        text-decoration: none;
+        color: var(--underground-white);
+        font-weight: bold; }
+
+header h1 {
+  color: var(--underground-white); }
+header ul.inline-list {
+  margin-left: 2vw;
+  box-sizing: content-box;
+  /* Padding and border are added to the width and height of the element */
+  display: inline;
+  list-style-type: none;
+  /* Removes default bullets */
+  padding: 0;
+  /* Removes default padding */
+  color: var(--underground-white); }
+header .text {
+  padding: 5px;
+  border-radius: 15px;
+  font-weight: bold; }
+header ul.inline-list li {
+  display: inline-block;
+  /* Displays list items inline */
+  margin-right: 0;
+  /* Adjusts space between items */
+  margin-top: 1vh;
+  margin-bottom: 1vh; }
+header ul.inline-list li:last-child::after {
+  content: "";
+  /* Removes dot after the last item */ }
+header li:hover {
+  cursor: pointer;
+  background-color: var(--underground-text-backing); }
+
+.d-flex {
+  display: flex;
+  /* This will enable flexbox for the container */
+  flex-wrap: wrap;
+  /* This allows items to wrap onto the next line if there's not enough space */
+  justify-content: space-between; }
+  .d-flex div {
+    min-width: 300px;
+    max-width: 700px;
+    flex: 1; }
+
+header .d-flex {
+  margin-top: 1.5vh; }
+
+.flex-row {
+  flex-direction: row;
+  /* This will arrange flex items in a row */ }
+
+.align-self-start {
+  align-self: flex-start;
+  /* Aligns the item to the start of the flex container */ }
+
+.align-self-end {
+  align-self: flex-end;
+  /* Aligns the item to the end of the flex container */ }
+
+.sunk {
+  margin-top: 6vh; }
+
+section {
+  padding-top: 5px;
+  margin: 20px 0;
+  text-align: center; }
+
+.form {
+  min-width: 300px;
+  max-width: 500px; }
+
+.inputBx {
+  padding: 0.2vh 1vw; }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.colored-backing {
+  z-index: var(--z-text);
+  color: var(--underground-secondary);
+  background-color: var(--underground-text-backing);
+  text-align: center; }
+
+.content .colored-backing {
+  box-shadow: 0 0 40px rgba(158, 243, 220, 0.2), 0 0 50px rgba(158, 243, 220, 0.2), 0 0 75px rgba(158, 243, 220, 0.2); }
+
+.video {
+  display: grid;
+  place-items: center;
+  padding: min(2vw, 15px);
+  margin: min(2.5vw, 15px);
+  width: 80%;
+  max-width: max(70vw, 560px); }
+  .video iframe {
+    width: 100%;
+    aspect-ratio: 560/315;
+    height: auto; }
+
+.bg-gradient {
+  background-image: linear-gradient(to bottom, #e6d2ff -5%, transparent 20%, transparent 80%, #e6d2ff 105%), linear-gradient(to right, var(--violet) -5%, transparent 3%, transparent 97%, var(--violet) 105%); }
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: min(2vw, 15px);
+  text-align: left; }
+
+.cards-gallery-container h2 {
+  font-size: 2em;
+  margin: 5px 0; }
+.cards-gallery-container .gallery {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap; }
+  .cards-gallery-container .gallery .gallery-item {
+    width: 30%;
+    max-width: 45%;
+    height: 200px;
+    position: relative;
+    margin: 18px 1%; }
+    .cards-gallery-container .gallery .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      margin-bottom: 20px; }
+    .cards-gallery-container .gallery .gallery-item p {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      text-align: right;
+      display: inline;
+      transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
+      background-color: var(--coral-transparent);
+      color: var(--underground-primary);
+      padding: 5px 10px;
+      border-bottom: 3px solid var(--base3);
+      box-sizing: content-box;
+      max-width: 70%; }
+    .cards-gallery-container .gallery .gallery-item h1, .cards-gallery-container .gallery .gallery-item h2, .cards-gallery-container .gallery .gallery-item h3, .cards-gallery-container .gallery .gallery-item h4, .cards-gallery-container .gallery .gallery-item h5, .cards-gallery-container .gallery .gallery-item h6, .cards-gallery-container .gallery .gallery-item time {
+      display: block;
+      margin: 0; }
+    .cards-gallery-container .gallery .gallery-item:hover {
+      cursor: pointer; }
+      .cards-gallery-container .gallery .gallery-item:hover p {
+        color: var(--underground-secondary);
+        transform: translateX(-5%); }
+.cards-gallery-container .view-all {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: var(--base0);
+  border: 2px solid var(--base02);
+  padding: min(1.5vw, 10px), min(2.5vw, 20px); }
+
+.hover-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 1em 3em;
+  background-size: 200% auto;
+  color: var(--base3);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
+  transition: 0.5s;
+  cursor: pointer;
+  border-width: 0;
+  max-width: 50%; }
+  .hover-button:hover {
+    background-position: right center; }
+
+.ring {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  transition: 0.5s; }
+
+.ring div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 40px; }
+
+.ring .inputBx {
+  position: relative;
+  width: 100%; }
+
+.ring i:nth-child(1) {
+  transform: translateX(70%);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate1 21s linear infinite; }
+
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 17s linear infinite; }
+
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate3 20s linear infinite; }
+
+.ring i:nth-child(4) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate4 24s linear infinite; }
+
+.ring i:nth-child(5) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate5 15s linear infinite; }
+
+.ring:hover i {
+  border: 6px solid var(--ring-color);
+  filter: drop-shadow(0 0 20px var(--ring-color)); }
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(-26.4px) translateY(-22px) rotate(0deg); }
+  100% {
+    transform: translateY(-26.4px) translateY(-22px) rotate(360deg); } }
+@keyframes animate2 {
+  0% {
+    transform: translateX(-13.2px) translateY(4.5px) rotate(360deg); }
+  100% {
+    transform: translateX(-13.2px) translateY(4.5px) rotate(0deg); } }
+@keyframes animate3 {
+  0% {
+    transform: translateX(-45.2px) translateY(4.6px) rotate(0deg); }
+  100% {
+    transform: translateX(-45.2px) translateY(4.6px) rotate(360deg); } }
+@keyframes animate4 {
+  0% {
+    transform: translateX(-38.2px) translateY(-15.7px) rotate(360deg); }
+  100% {
+    transform: translateX(-38.2px) translateY(-15.7px) rotate(0deg); } }
+@keyframes animate5 {
+  0% {
+    transform: translateX(-17.6px) translateY(-15.3px) rotate(0deg); }
+  100% {
+    transform: translateX(-17.6px) translateY(-15.3px) rotate(360deg); } }
+@keyframes neon-pink-glow {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #F897E9EA, 0 0 70px #F897E9EA, 0 0 80px #F897E9EA, 0 0 100px #F897E9EA, 0 0 150px #F897E9EA; }
+  to {
+    box-shadow: 0 0 5px #F897E9EA, 0 0 10px #F897E9EA, 0 0 15px #fff, 0 0 20px #F897E9EA, 0 0 35px #F897E9EA, 0 0 40px #F897E9EA, 0 0 50px #F897E9EA, 0 0 75px #F897E9EA; } }
+
+/*# sourceMappingURL=style.css.map */
