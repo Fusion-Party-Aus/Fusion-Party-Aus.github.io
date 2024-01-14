@@ -23,6 +23,7 @@
   --underground-tertiary-transparent: rgba(171,178,227,0.7);
   --underground-text: #080305;
   --underground-text-backing: rgba(217, 208, 248, 0.6);
+  --underground-text-contrast-backing: rgba(217, 208, 248, 0.87);
   --underground-background: #f2e3ff;
   --underground-white: #fcf8ff;
   --fusion-aqua: #5effd8;
@@ -244,6 +245,9 @@ section {
   color: var(--underground-secondary);
   background-color: var(--underground-text-backing);
   text-align: center; }
+
+.hero-background .colored-backing:hover {
+  background-color: var(--underground-text-contrast-backing); }
 
 .content .colored-backing {
   box-shadow: 0 0 40px rgba(158, 243, 220, 0.2), 0 0 50px rgba(158, 243, 220, 0.2), 0 0 75px rgba(158, 243, 220, 0.2); }

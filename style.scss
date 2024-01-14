@@ -29,6 +29,7 @@
   --underground-tertiary-transparent: rgba(171,178,227,0.7);
   --underground-text: #080305;
   --underground-text-backing: rgba(217, 208, 248, 0.6);
+  --underground-text-contrast-backing: rgba(217, 208, 248, 0.87);
   --underground-background: #f2e3ff;
   --underground-white: #fcf8ff;
   // Previous Fusion colours
@@ -323,6 +324,14 @@ section {
   // adjust the underground-background-color, which will be shining through.
   background-color: var(--underground-text-backing);
   text-align: center;
+}
+
+.hero-background .colored-backing {
+  // The colored backing is partially transparent, so if there's an image behind it, we'll enhance the contrast while
+  // people are reading.
+  &:hover {
+    background-color: var(--underground-text-contrast-backing);
+  }
 }
 
 .content {
