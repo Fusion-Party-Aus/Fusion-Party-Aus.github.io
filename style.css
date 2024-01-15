@@ -63,7 +63,7 @@ h1, h2, h3, h4, h4, h5, h6 {
 
 .hero-background {
   position: relative;
-  background-image: linear-gradient(to bottom, rgba(236, 201, 252, 0.7) -5%, transparent 20%, transparent 80%, rgba(9, 93, 64, 0.38) 105%), linear-gradient(to right, var(--pastel-pink-solid) -5%, transparent 3%, transparent 97%, var(--pastel-pink-solid) 105%), url("images/forest portal.png");
+  background-image: linear-gradient(to bottom, rgba(236, 201, 252, 0.7) -5%, transparent 20%, transparent 80%, rgba(9, 93, 64, 0.38) 105%), linear-gradient(to right, var(--pastel-pink-solid) -5%, transparent 3%, transparent 97%, var(--pastel-pink-solid) 105%), url("images/forest portal.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
