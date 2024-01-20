@@ -504,7 +504,6 @@ section {
 }
 
 .ring i:nth-child(1) {
-  transform: translateX(70%);
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
   animation: animate1 21s linear infinite;
 }
