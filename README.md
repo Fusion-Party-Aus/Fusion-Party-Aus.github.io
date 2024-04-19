@@ -1,5 +1,5 @@
 # Fusion website sample
-This site can be seen running at <https://owen9825.github.io/> 
+This site can be seen running at <https://fusion-party-aus.github.io/> 
 
 This project aims to create a hardcoded website that *appears to be* a viable website for the 
 [Fusion Party](https://www.fusionparty.org.au/).
